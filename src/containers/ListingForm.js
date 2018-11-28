@@ -26,7 +26,7 @@ class ListingForm extends Component{
 
         return (
             <div>
-                Add A Listing To Inventory
+                <h1>Add Listing To Inventory</h1>
                 <form onSubmit={this.handleOnSubmit}>
                     <div>
                         <label htmlFor="name">Name:</label>
@@ -108,8 +108,10 @@ class ListingForm extends Component{
                             name="host"
                             value={host}
                         />
-                    </div>
+                    </div><br></br>
                     <button type="submit">Add Listing</button>
+                    <br></br>
+                    <br></br>
                 </form>
             </div>
         )

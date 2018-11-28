@@ -31,3 +31,32 @@
 }
 
 
+/* NAV BAR */
+.navBar {
+  display: flex;
+  justify-content: center;
+  background-color: lightskyblue;
+  padding: 0;
+  margin: 0;
+}
+
+.navBar a:hover {
+  color: white;
+  background-color: darkblue;
+  transition: 0.7s;
+}
+
+.navButton {
+  display: none;
+  color: blue;
+  background: black;
+  border: none;
+  font-size: 1.3em;
+  padding: 15px;
+}
+
+.navHome {
+
+}
+
+

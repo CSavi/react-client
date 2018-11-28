@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 export const Home = () => {
     return(
-        <div className="heroImage">
+        <div className="landingPage">
             <span>
                 <h1> Welcome to MyAir</h1>
-                <p><NavLink to="/listings" className="listingSubmit">Enter</NavLink></p>
+                <p><NavLink to="/new" className="newListing">Enter</NavLink></p>
             </span>
         </div>
     )
