@@ -27,6 +27,7 @@ const App = (props)  => {
                             <Route exact path="/" component={Home} />
                             <Route exact path="/about" component={About} />
                             <Route exact path="/new" component={ListingForm} />
+                            <Route exact path="/listings" component={Listings} />
                             <Route exact path="/listings/:listing_id" component={Listing} />
                         </React.Fragment>
                     </Router>

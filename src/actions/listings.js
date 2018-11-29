@@ -36,7 +36,6 @@ export const getListings = () => {
 }
 
 export const createListing = listing => {
-    
     return dispatch => {
         return fetch(`${API_URL}/listings`, {
             method: 'POST',
@@ -58,9 +57,7 @@ export const deleteListing = listing => {
     return dispatch => {
         return fetch(`${API_URL}/listings/${listing.id}`, {
             method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+           
         })
         .then(dispatch(destroyListing(listing))
         )

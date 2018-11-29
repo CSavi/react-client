@@ -16,9 +16,9 @@ export const HeadNav = () => {
             <div className="navbar" id="navBar">
                 <button className="navButton" onClick={navResponse} ></button>
                 <NavLink to="/" className="navHome" id="navHome" onClick={navResponse}></NavLink>
-                <NavLink to="/listings" onClick={navResponse}>Listings</NavLink>
-                <NavLink to="/new" onClick={navResponse}>Add to Listings</NavLink>
-                <NavLink to="/about" onClick={navResponse}>About</NavLink>
+                <NavLink to="/listings" onClick={navResponse}><button>Listings</button></NavLink>
+                <NavLink to="/new" onClick={navResponse}><button>Add to Listings</button></NavLink>
+                <NavLink to="/about" onClick={navResponse}><button>About</button></NavLink>
             </div>
         </header>
     )

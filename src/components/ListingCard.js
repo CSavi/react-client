@@ -12,6 +12,9 @@ const ListingCard = ({ listing }) => {
         <p>Postal Code: {listing.postal_code}</p>
         <p>Description: {listing.description}</p>
         <p>Host: {listing.host}</p>
+        
+        {/* <span>{listing.text}</span> */}
+        {/* <button className="listingDestroy" onClick={() => listing.deleteListing(listing)}>Delete</button> */}
     </div>
     )}
 
