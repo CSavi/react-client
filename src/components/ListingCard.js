@@ -1,6 +1,9 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import * as Listings from '../actions/listings'
+import { connect } from 'react-redux';
 
-const ListingCard = ({ listing }) => {
+const ListingCard = ({ listing, action }) => {
     return(
     <div key={listing.id} className="ListingCard">
         <h3>{listing.name}</h3>
@@ -12,10 +15,16 @@ const ListingCard = ({ listing }) => {
         <p>Postal Code: {listing.postal_code}</p>
         <p>Description: {listing.description}</p>
         <p>Host: {listing.host}</p>
-        
-        {/* <span>{listing.text}</span> */}
-        {/* <button className="listingDestroy" onClick={() => listing.deleteListing(listing)}>Delete</button> */}
+
+        {/* When clicked, dispatches an action telling store to delete specific listing */}
+        <button className="listingDestroy" onClick={() => action.deleteListing(listing)}>Delete</button>
     </div>
     )}
 
-export default ListingCard;
+const mapDispatchToProps = dispatch => {
+    return {
+        action: bindActionCreators(Listings, dispatch)
+    }
+}
+
+export default connect(null, mapDispatchToProps)(ListingCard)

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
 import '../containers/App.css'
 import Listings from '../containers/Listings';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -27,6 +28,7 @@ const App = (props)  => {
                             <Route exact path="/" component={Home} />
                             <Route exact path="/about" component={About} />
                             <Route exact path="/new" component={ListingForm} />
+                            {/* <Route exact path="/featured" component={Featured} /> */}
                             <Route exact path="/listings" component={Listings} />
                             <Route exact path="/listings/:listing_id" component={Listing} />
                         </React.Fragment>

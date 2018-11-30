@@ -14,7 +14,7 @@ class Listings extends Component {
     }
 
     render() {
-        const listingNew = this.props.listings.map((listing, id) => <ListingCard key={id} listing={listing} deleteListing={this.props.deleteListing}/>)
+        const listingNew = this.props.listings.map(listing => <ListingCard key={listing.id} listing={listing} deleteListing={this.props.deleteListing}/>)
         return (
             <div className="ListingContainer">
             <h1>Listings</h1>
