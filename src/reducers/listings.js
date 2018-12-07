@@ -4,18 +4,13 @@ export default (state=[], action) => {
             return action.listings;
         
         case 'CREATE_LISTING':
-
-        const listing = {
-            id: Math.random()*10000000000000000,
-            text: action.payload.text
-        }
             return state.concat(action.listing);
 
         case 'DELETE_LISTING':
             // let listings = state.filter(listing => {
             //     return listing.id !== action.listing.id  
             // })  
-            return { listings: state.listings.filter(listing => listing.id !== action.payload)}
+            return state.filter(listing => listing.id !== action.listing)
 
         default:
             return state;

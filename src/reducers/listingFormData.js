@@ -17,9 +17,6 @@ export default (state = initialState, action) => {
         case 'UPDATED_DATA':
             return action.listingFormData
 
-        case 'CREATE_LISTING':
-            return action.listingFormData
-
         case 'RESET_LISTING_FORM':
             return initialState;
              

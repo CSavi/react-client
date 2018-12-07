@@ -59,7 +59,7 @@ export const deleteListing = listing => {
             method: 'DELETE',
            
         })
-        .then(dispatch(destroyListing(listing))
+        .then(dispatch(destroyListing(listing.id))
         )
         .catch(error => (error))
     }

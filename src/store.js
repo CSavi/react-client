@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 // middleware; makes asynchronus calls
 import thunk from 'redux-thunk';
 import listings from './reducers/listings';
@@ -15,7 +15,8 @@ const middleware = [thunk];
 
 export default createStore(
     reducers,
-    window._REDUX_DEVTOOLS_EXTENSION_&& window._REDUX_DEVTOOLS_EXTENSION_(),
-    // middleware must came after devtools
-    applyMiddleware(...middleware),
+    compose(
+        applyMiddleware(...middleware),
+        window.devToolsExtension ? window.devToolsExtension() : f => f
+    )
 );
