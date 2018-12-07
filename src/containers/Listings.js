@@ -13,14 +13,14 @@ class Listings extends Component {
         this.props.getListings()
     }
 
-    render() {
+    render() {                                                                                                  // change to listing.deleteListing?
         const listingNew = this.props.listings.map(listing => <ListingCard key={listing.id} listing={listing} deleteListing={this.props.deleteListing}/>)
         return (
             <div className="ListingContainer">
-            <h1>Listings</h1>
-            {listingNew}
-            <ListingForm />
-        </div>
+                <h1>Listings</h1>
+                {listingNew}
+                <ListingForm />
+            </div>
         )
     }
 };

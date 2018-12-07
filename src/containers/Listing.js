@@ -9,7 +9,7 @@ const Listing = props => {
         <div>
             <span>Listing: {props.listing.text}</span>
             <button onClick={() =>
-                props.deleteListing(props.todo.id)}>DELETE</button>
+                props.deleteListing(props.listing.id)}>DELETE</button>
         </div>
     )
 }
