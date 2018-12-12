@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import * as Listings from '../actions/listings'
 import { connect } from 'react-redux';
+import LikeCounter from './LikeCounter';
 
 const ListingCard = ({ listing, action }) => {
     return(
@@ -18,6 +19,7 @@ const ListingCard = ({ listing, action }) => {
 
         {/* When clicked, dispatches an action telling store to delete specific listing */}
         <button className="listingDestroy" onClick={() => action.deleteListing(listing)}>Delete</button>
+        <LikeCounter />
     </div>
     )}
 

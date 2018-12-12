@@ -25,7 +25,13 @@ const destroyListing = listing => {
     }
 }
 
+
+
 // Async Actions
+export const likeListing = (listing) => {
+
+}
+
 export const getListings = () => {
     return dispatch => {
         return fetch(`${API_URL}/listings`)
@@ -36,6 +42,7 @@ export const getListings = () => {
 }
 
 export const createListing = listing => {
+    console.log('C')
     return dispatch => {
         return fetch(`${API_URL}/listings`, {
             method: 'POST',
@@ -46,11 +53,13 @@ export const createListing = listing => {
         })
             .then(resp => resp.json())
             .then(listing => {
+                console.log('D')
                 dispatch(addListing(listing))
                 dispatch(resetListingForm())
             })
             .catch(error => (error));
     }
+    console.log('E')
 }
 
 export const deleteListing = listing => {

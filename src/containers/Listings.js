@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import ListingCard from '../components/ListingCard';
 import ListingForm from './ListingForm';
 import { getListings } from '../actions/listings';
-import { deleteListing } from '../actions/listings';
 import './Listings.css';
 
 // use class for lifecycle event
@@ -30,12 +29,6 @@ const mapStateToProps = (state) => {
         listings: state.listings
     })
 }
-
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         deleteListing: listingText => dispatch({ type: 'DELETE_LISTING', payload: listingText })
-//     }
-// }
 
 
 // export default connect(mapStateToProps, { getListings, deleteListing })(Listings);
