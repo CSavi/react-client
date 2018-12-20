@@ -8,7 +8,8 @@ const initialState = {
     state: '',
     postal_code: '',
     description: '',
-    host: ''
+    host: '',
+    count: 0
 }
 
 export default (state = initialState, action) => {

@@ -25,12 +25,15 @@ const destroyListing = listing => {
     }
 }
 
+const udpateListing = listing => {
+    return {
+        type: 'UPDATE_LISTING',
+        listing
+    }
+}
 
 
 // Async Actions
-export const likeListing = (listing) => {
-
-}
 
 export const getListings = () => {
     return dispatch => {
@@ -42,7 +45,6 @@ export const getListings = () => {
 }
 
 export const createListing = listing => {
-    console.log('C')
     return dispatch => {
         return fetch(`${API_URL}/listings`, {
             method: 'POST',
@@ -53,13 +55,31 @@ export const createListing = listing => {
         })
             .then(resp => resp.json())
             .then(listing => {
-                console.log('D')
                 dispatch(addListing(listing))
                 dispatch(resetListingForm())
             })
             .catch(error => (error));
     }
-    console.log('E')
+}
+
+export const editListing = listing => {
+    let listing_id = listing.id;
+    let updatedListing = {...listing, count: listing.count + 1};
+
+    return dispatch => {
+        return fetch(`${API_URL}/listings/${listing_id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ listing: updatedListing })
+        })
+        .then(resp => resp.json())
+        .then(listing => {
+            dispatch(udpateListing(listing))
+            dispatch(resetListingForm())
+        })
+    }
 }
 
 export const deleteListing = listing => {

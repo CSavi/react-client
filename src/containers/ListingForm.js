@@ -16,9 +16,7 @@ class ListingForm extends Component{
 
     handleOnSubmit = event => {
         event.preventDefault();
-        console.log('A')
         this.props.createListing(this.props.listingFormData)
-        console.log('B')
     }
 
    

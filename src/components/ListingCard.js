@@ -19,7 +19,8 @@ const ListingCard = ({ listing, action }) => {
 
         {/* When clicked, dispatches an action telling store to delete specific listing */}
         <button className="listingDestroy" onClick={() => action.deleteListing(listing)}>Delete</button>
-        <LikeCounter />
+        <button className="listingEdit" onClick={() => action.editListing(listing)}>{listing.count}</button>
+        
     </div>
     )}
 
